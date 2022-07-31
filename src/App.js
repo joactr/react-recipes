@@ -1,23 +1,15 @@
 
 import './App.css';
 import Axios from "axios";
+import {useEffect,useState} from "react";
+import Popular from "./components/Popular";
 
 function App() {
-  const url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&includeNutrition=true`;
-
-  async function getRecipes(){
-    var result = await Axios.get(url);
-    console.log(result.data);
-  }
 
   return (
     <div className="App">
       <header className="App-header">
-        <a
-          onClick={getRecipes}
-        >
-          Learn React
-        </a>
+        <Popular/>
       </header>
     </div>
   );
